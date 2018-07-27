@@ -20,30 +20,30 @@ def test_one_element_list():
 
 
 def test_already_sorted():
-    already_sorted = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    already_sorted = [i for i in range(100)]
     assert selection_sort(already_sorted) == sorted(already_sorted)
 
 
 def test_decrementing():
-    decrementing = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    decrementing = [i for i in reversed(range(100))]
     assert selection_sort(decrementing) == sorted(decrementing)
 
 
 def test_random_positives():
-    rand_nums = random.sample(range(1, 100), 5)
+    rand_nums = random.sample(range(1, 250), 100)
     assert selection_sort(rand_nums) == sorted(rand_nums)
 
 
 def test_random_negatives():
-    rand_nums = random.sample(range(-100, -1), 5)
+    rand_nums = random.sample(range(-250, -1), 100)
     assert selection_sort(rand_nums) == sorted(rand_nums)
 
 
 def test_random_numbers():
-    rand_nums = random.sample(range(-100, 100), 10)
+    rand_nums = random.sample(range(-250, 250), 100)
     assert selection_sort(rand_nums) == sorted(rand_nums)
 
 
 def test_has_duplicates():
-    rand_nums = [random.randint(1, 5) for x in range(1, 10)]
+    rand_nums = [random.randint(0, 24) for x in range(100)]
     assert selection_sort(rand_nums) == sorted(rand_nums)
