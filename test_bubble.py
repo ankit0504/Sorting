@@ -1,11 +1,11 @@
 import random
 
-def bubble_sort(given_list):
-    for i in range(len(given_list)):
-        for j in range(len(given_list) - i - 1):
-            if given_list[j] > given_list[j + 1]:
-                given_list[j], given_list[j + 1] = given_list[j + 1], given_list[j]
-    return given_list
+def bubble_sort(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
 
 
 def test_empty_list():

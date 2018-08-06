@@ -1,19 +1,19 @@
 import random
 
-def quicksort(given_list):
-    if not given_list:
-        return (given_list)
+def quicksort(arr):
+    if not arr:
+        return (arr)
     less = []
-    piv_list = []
+    orig = []
     greater = []
-    piv_el = given_list[random.randint(0, len(given_list) - 1)]
-    for i in given_list:
+    piv_el = arr[random.randint(0, len(arr) - 1)]
+    for i in arr:
         if i < piv_el: less.append(i)
-        elif i == piv_el: piv_list.append(i)
+        elif i == piv_el: orig.append(i)
         else: greater.append(i)
     less = quicksort(less)
     greater = quicksort(greater)
-    return less + piv_list + greater
+    return less + orig + greater
 
 
 def test_empty_list():

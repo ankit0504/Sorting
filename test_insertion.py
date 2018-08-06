@@ -1,13 +1,13 @@
 import random
 
-def insertion_sort(given_list):
-    for i in range (len(given_list)):
+def insertion_sort(arr):
+    for i in range (len(arr)):
         comp = i - 1
-        while comp >= 0 and given_list[i] < given_list[comp]:
-            given_list[comp + 1] = given_list[comp]
+        while comp >= 0 and arr[i] < arr[comp]:
+            arr[comp + 1] = arr[comp]
             comp -= 1
-        given_list[comp + 1] = given_list[i]
-    return given_list
+        arr[comp + 1] = arr[i]
+    return arr
 
 
 def test_empty_list():

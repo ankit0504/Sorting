@@ -1,17 +1,17 @@
 import random
 
-def counting_sort(given_list):
-    if len(given_list) < 2:
-        return given_list
-    minimum = min(given_list)
-    maximum = max(given_list)
+def counting_sort(arr):
+    if len(arr) < 2:
+        return arr
+    minimum = min(arr)
+    maximum = max(arr)
     num_instances = [0 for i in range(minimum, maximum+1)]
-    returnable = [0 for i in range(len(given_list))]
-    for num in given_list:
+    returnable = [0 for i in range(len(arr))]
+    for num in arr:
         num_instances[num - minimum] += 1
     for i in range(1, len(num_instances)):
         num_instances[i] += num_instances[i - 1]
-    for i in reversed(given_list):
+    for i in reversed(arr):
         returnable[num_instances[i - minimum] - 1] = i
         num_instances[i - minimum] -= 1
     return returnable
