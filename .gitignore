@@ -1,4 +1,6 @@
+*.pyc
+
 .vscode
 /.cache/
 /.pytest_cache/
-*.pyc
+
